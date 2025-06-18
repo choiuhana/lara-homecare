@@ -47,28 +47,32 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 
 	const contextMsg = `대상: ${userType}, 서비스: ${serviceType}`;
 
-	if (!serviceType) {
-		return (
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-				<button
-					onClick={() => setServiceType("visit")}
-					className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
-				>
-					<div className="text-4xl mb-4">🏠</div>
-					<h3 className="text-lg font-semibold mb-2">방문 요양을 원해요</h3>
-					<p className="text-sm opacity-80">집으로 방문하는 돌봄 서비스</p>
-				</button>
-				<button
-					onClick={() => setServiceType("family")}
-					className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
-				>
-					<div className="text-4xl mb-4">👪</div>
-					<h3 className="text-lg font-semibold mb-2">가족 요양을 원해요</h3>
-					<p className="text-sm opacity-80">가족이 돌봄을 제공하는 서비스</p>
-				</button>
-			</div>
-		);
-	}
+        if (!serviceType) {
+                return (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <button
+                                        onClick={() => setServiceType("visit")}
+                                        className="card bg-base-100 shadow-md hover:shadow-xl transition"
+                                >
+                                        <div className="card-body items-center text-center">
+                                                <div className="text-4xl">🏠</div>
+                                                <h3 className="card-title">방문 요양을 원해요</h3>
+                                                <p className="text-sm">집으로 방문하는 돌봄 서비스</p>
+                                        </div>
+                                </button>
+                                <button
+                                        onClick={() => setServiceType("family")}
+                                        className="card bg-base-100 shadow-md hover:shadow-xl transition"
+                                >
+                                        <div className="card-body items-center text-center">
+                                                <div className="text-4xl">👪</div>
+                                                <h3 className="card-title">가족 요양을 원해요</h3>
+                                                <p className="text-sm">가족이 돌봄을 제공하는 서비스</p>
+                                        </div>
+                                </button>
+                        </div>
+                );
+        }
 
 	const detail = info();
 
@@ -77,20 +81,20 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 			<h3 className="text-2xl font-semibold">{detail?.title}</h3>
 			<p>{detail?.desc}</p>
 			<p className="font-medium">{detail?.price}</p>
-			<div className="flex flex-col sm:flex-row gap-4 justify-center">
-				<Link
-					href="/find"
-					className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md font-medium text-center flex-1"
-				>
-					센터를 방문할게요
-				</Link>
-				<button
-					onClick={() => setShowContact(true)}
-					className="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition shadow-md font-medium flex-1"
-				>
-					문의하고 싶어요
-				</button>
-			</div>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link
+                                        href="/find"
+                                        className="btn btn-primary flex-1"
+                                >
+                                        센터를 방문할게요
+                                </Link>
+                                <button
+                                        onClick={() => setShowContact(true)}
+                                        className="btn flex-1"
+                                >
+                                        문의하고 싶어요
+                                </button>
+                        </div>
 			<ContactModal showContact={showContact} setShowContact={setShowContact} context={contextMsg} />
 		</div>
 	);

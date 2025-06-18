@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+This template has been updated to use [daisyUI](https://daisyui.com/) for UI components.
+
 ## Getting Started
 
 First, run the development server:

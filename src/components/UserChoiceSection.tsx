@@ -28,29 +28,35 @@ const UserChoiceSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <button
             onClick={handleCenterInfo}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
+            className="card bg-base-100 shadow-md hover:shadow-xl transition"
           >
-            <div className="text-4xl mb-4">📍</div>
-            <h3 className="text-lg font-semibold mb-2">센터에 대해 알려주세요</h3>
-            <p className="text-sm opacity-80">센터 소개와 위치를 확인하세요</p>
+            <div className="card-body items-center text-center">
+              <div className="text-4xl">📍</div>
+              <h3 className="card-title">센터에 대해 알려주세요</h3>
+              <p className="text-sm">센터 소개와 위치를 확인하세요</p>
+            </div>
           </button>
-          
+
           <button
             onClick={() => setUserType("client")}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
+            className="card bg-base-100 shadow-md hover:shadow-xl transition"
           >
-            <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-            <h3 className="text-lg font-semibold mb-2">요양보호사가 필요합니다</h3>
-            <p className="text-sm opacity-80">어르신을 위한 요양 서비스 신청</p>
+            <div className="card-body items-center text-center">
+              <div className="text-4xl">👨‍👩‍👧‍👦</div>
+              <h3 className="card-title">요양보호사가 필요합니다</h3>
+              <p className="text-sm">어르신을 위한 요양 서비스 신청</p>
+            </div>
           </button>
-          
+
           <button
             onClick={() => setUserType("caregiver")}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
+            className="card bg-base-100 shadow-md hover:shadow-xl transition"
           >
-            <div className="text-4xl mb-4">👩‍⚕️</div>
-            <h3 className="text-lg font-semibold mb-2">요양보호사 입니다</h3>
-            <p className="text-sm opacity-80">요양보호사 지원 및 문의</p>
+            <div className="card-body items-center text-center">
+              <div className="text-4xl">👩‍⚕️</div>
+              <h3 className="card-title">요양보호사 입니다</h3>
+              <p className="text-sm">요양보호사 지원 및 문의</p>
+            </div>
           </button>
         </div>
       ) : (
@@ -59,7 +65,7 @@ const UserChoiceSection = () => {
           <div className="flex items-center justify-center mb-8">
             <button
               onClick={resetSelections}
-              className="flex items-center text-white hover:underline mr-2"
+              className="btn btn-link no-underline text-base-100"
             >
               <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
@@ -67,7 +73,7 @@ const UserChoiceSection = () => {
               처음으로 돌아가기
             </button>
             <span className="mx-2 opacity-60">|</span>
-            <div className="text-sm rounded-full bg-white bg-opacity-20 px-3 py-1 text-gray-900">
+            <div className="text-sm rounded-full bg-base-100 px-3 py-1 text-base-content">
               {userType === "client" ? "요양보호사 찾기" : "요양보호사 지원"}
             </div>
           </div>
